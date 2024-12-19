@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35219.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLOCK2PAY", "CLOCK2PAY.csproj", "{DA83B41F-D7DF-43D8-84AE-AD3CA21307AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA83B41F-D7DF-43D8-84AE-AD3CA21307AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA83B41F-D7DF-43D8-84AE-AD3CA21307AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA83B41F-D7DF-43D8-84AE-AD3CA21307AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA83B41F-D7DF-43D8-84AE-AD3CA21307AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {998CF75D-FAB8-459B-BE13-2929FB6F6FF7}
+	EndGlobalSection
+EndGlobal

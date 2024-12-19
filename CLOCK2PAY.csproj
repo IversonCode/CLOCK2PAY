@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DA83B41F-D7DF-43D8-84AE-AD3CA21307AE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CLOCK2PAY</RootNamespace>
+    <AssemblyName>CLOCK2PAY</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls, Version=2.2.5.0, Culture=neutral, PublicKeyToken=a8ac264d1dc6b9d9, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Controls.2.2.5\lib\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Abstractions.6.34.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.JsonWebTokens.6.34.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Logging.6.34.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IdentityModel.Tokens.6.34.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.34.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\System.IdentityModel.Tokens.Jwt.6.34.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Twilio, Version=7.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Twilio.7.7.0\lib\net462\Twilio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ACreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACreate.Designer.cs">
+      <DependentUpon>ACreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attempt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Attempt.Designer.cs">
+      <DependentUpon>Attempt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Attendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AttendanceTracker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AttendanceTracker.Designer.cs">
+      <DependentUpon>AttendanceTracker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AUpdate.Designer.cs">
+      <DependentUpon>AUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clock2Pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clock2Pay.Designer.cs">
+      <DependentUpon>Clock2Pay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPass.Designer.cs">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginLimit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginLimit.Designer.cs">
+      <DependentUpon>LoginLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MasterList.Designer.cs">
+      <DependentUpon>MasterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mcreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mcreate.Designer.cs">
+      <DependentUpon>Mcreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mupdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mupdate.Designer.cs">
+      <DependentUpon>Mupdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Records.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Records.Designer.cs">
+      <DependentUpon>Records.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResignList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ResignList.Designer.cs">
+      <DependentUpon>ResignList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuperAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuperAdmin.Designer.cs">
+      <DependentUpon>SuperAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Salary.Designer.cs">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeInNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeInNotif.Designer.cs">
+      <DependentUpon>TimeInNotif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeOutNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeOutNotif.Designer.cs">
+      <DependentUpon>TimeOutNotif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogPayslip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLogPayslip.Designer.cs">
+      <DependentUpon>UserLogPayslip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitingNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitingNotif.Designer.cs">
+      <DependentUpon>WaitingNotif.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ACreate.resx">
+      <DependentUpon>ACreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attempt.resx">
+      <DependentUpon>Attempt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AttendanceTracker.resx">
+      <DependentUpon>AttendanceTracker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AUpdate.resx">
+      <DependentUpon>AUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clock2Pay.resx">
+      <DependentUpon>Clock2Pay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPass.resx">
+      <DependentUpon>ForgotPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginLimit.resx">
+      <DependentUpon>LoginLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterList.resx">
+      <DependentUpon>MasterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mcreate.resx">
+      <DependentUpon>Mcreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mupdate.resx">
+      <DependentUpon>Mupdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Records.resx">
+      <DependentUpon>Records.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResignList.resx">
+      <DependentUpon>ResignList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salary.resx">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuperAdmin.resx">
+      <DependentUpon>SuperAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeInNotif.resx">
+      <DependentUpon>TimeInNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeOutNotif.resx">
+      <DependentUpon>TimeOutNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLogPayslip.resx">
+      <DependentUpon>UserLogPayslip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitingNotif.resx">
+      <DependentUpon>WaitingNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
